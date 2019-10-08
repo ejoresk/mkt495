@@ -9,7 +9,8 @@ def pixel_reader():
 
 	for i in image_list[1:]:
 		# standardize image dimensions + create rgba arrays
-		image = Image.open(i).resize(dimensions[image_list[0]], Image.ANTIALIAS)
+		dimensions_lookup = dimensions[image_list[0]]
+		image = Image.open(i).resize(dimensions_lookup, Image.ANTIALIAS)
 		pixel_value_array = str(list(image.getdata()))
 		filename.write(pixel_value_array)
 
