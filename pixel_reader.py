@@ -25,3 +25,5 @@ def pixel_reader(batch):
 
 		rename(image_name, batch + "/" + image_name)
 
+	image_list.close()
+
