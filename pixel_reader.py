@@ -1,5 +1,5 @@
 from os import rename
-from pathlib import Path as path
+from pathlib import Path
 from PIL import Image
 
 # maximum or recommended image dimensions by platform
@@ -17,7 +17,7 @@ def pixel_reader(batch):
 
 		# create + write image-wise rgba arrays to files
 		image_name = i.rstrip() + ".pixels"
-		path(image_name).touch()
+		Path(image_name).touch()
 
 		filename = open(image_name, "r+")
 		filename.write(pixel_value_array)
