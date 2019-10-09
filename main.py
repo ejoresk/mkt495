@@ -1,6 +1,6 @@
 import os
 from pixel_reader import pixel_reader as pr
-from rgba_parser import rgba_averager, rgba_parser as rgbaa, rgbap
+# from rgba_handler import rgba_averager, rgba_parser as rgbaa, rgbap
 
 if __name__ == "__main__":
 	# create batch folder
@@ -8,9 +8,9 @@ if __name__ == "__main__":
 	os.makedirs(batch)
 
 	# create rgba arrays + populate batch folder
-	pr()
+	pr(batch)
 
 	# parse rgba arrays + write averages to file
-	rgbap()
-	rgbaa()
+#	rgbap()
+#	rgbaa()
 
