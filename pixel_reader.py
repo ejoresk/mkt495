@@ -7,7 +7,9 @@ dimensions = {"Facebook": [1200, 630], "Instagram": [1080, 1080], "Twitter": [10
 
 def pixel_reader(batch):
 	# open list of image filenames + read by line
-	image_list = open(input("Path to image filenames?"), "r").readlines()
+	image_list_file = input("Path to image filenames?")
+	with open(image_list_file, "r") as image_list:
+		image_list = image_list.readlines()
 
 	for i in image_list[1:]:
 		# standardize image dimensions + create rgba arrays
@@ -25,5 +27,7 @@ def pixel_reader(batch):
 
 		rename(image_name, batch + "/" + image_name)
 
-	return dimensions[image_list[0].rstrip()]
+	rename(image_list_file, batch + "/" + image_list_file)
+
+	return image_list_file
 
