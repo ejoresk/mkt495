@@ -14,8 +14,9 @@ for i in ls:
 		# read image to string, remove newline chars
 		image_string = image_to_string(i)
 		image_string = image_string.replace("\n", " ")
-		image_string = image_string.strip(" ")
-		#image_string = " ".join(image_string)
+		image_string = image_string.split(" ")
+		image_string = image_string[1:]
+		image_string = " ".join(image_string)
 
 		# write string to txt file
 		write_fl = open(i[:(len(i) - 4)] + ".txt", "w")
