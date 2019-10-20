@@ -19,7 +19,5 @@ write_fl.close()
 
 chdir("..")
 mkdir("sentiments")
-current_directory = join(getcwd(), directory)
-sentiments_directory = join(getcwd(), "sentiments")
 rename(join(directory, write_fl_name), join("sentiments", write_fl_name))
 
