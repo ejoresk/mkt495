@@ -1,6 +1,6 @@
 from os import chdir, getcwd, listdir, mkdir, rename
 from os.path import join
-import textblob
+from textblob import TextBlob
 
 directory = input("Directory name?")
 chdir(join(getcwd(), directory))
@@ -10,7 +10,7 @@ write_fl = open(write_fl_name, "w")
 
 for i in ls:
 	read_fl = open(i, "r").read()
-	read_fl = textblob.TextBlob(read_fl)
+	read_fl = TextBlob(read_fl)
 	sentiment_obj = read_fl.sentiment
 	sentiment_array = [sentiment_obj[0], sentiment_obj[1]]
 	write_fl.write(str(sentiment_array) + "\n")
