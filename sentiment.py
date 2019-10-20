@@ -21,5 +21,5 @@ chdir("..")
 mkdir("sentiments")
 current_directory = join(getcwd(), directory)
 sentiments_directory = join(getcwd(), "sentiments")
-rename(join(current_directory, write_fl_name), join(sentiments_directory, write_fl_name))
+rename(join(directory, write_fl_name), join("sentiments", write_fl_name))
 
