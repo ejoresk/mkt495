@@ -11,7 +11,7 @@ ls = listdir()
 # iteratively read image to string, write string to file, + delete image file
 for i in ls:
 	if i != ".DS_Store" and i[(len(i) - 3):] != "txt":
-		# read image to string, remove newline chars
+		# read image to string, remove newline chars, remove first token
 		image_string = image_to_string(i)
 		image_string = image_string.replace("\n", " ")
 		image_string = image_string.split(" ")
